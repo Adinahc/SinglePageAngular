@@ -8,7 +8,7 @@
 
   function LunchCheckController($scope){
     $scope.CheckLunchItems = function(){
-      if(angular.isUndefined($scope.LunchItems)){
+      if(angular.isUndefined($scope.LunchItems) || $scope.LunchItems.length == 0){
         $scope.Message = "Please enter data first"
       }
       else {
