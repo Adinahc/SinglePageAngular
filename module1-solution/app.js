@@ -8,12 +8,17 @@
 
   function LunchCheckController($scope){
     $scope.CheckLunchItems = function(){
-      var items = $scope.LunchItems.split(',')
-      if(items.length <= 3){
-        $scope.Message = "Enjoy!";
+      if(angular.isUndefined($scope.LunchItems)){
+        $scope.Message = "Please enter data first"
       }
       else {
-        $scope.Message = "Too much!";
+        var items  = $scope.LunchItems.split(',')
+        if(items.length <= 3){
+          $scope.Message = "Enjoy!";
+        }
+        else {
+          $scope.Message = "Too much!";
+        }
       }
     };
 
